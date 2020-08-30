@@ -1,0 +1,26 @@
+{
+  "name": "railway-app",
+  "version": "1.0.0",
+  "description": "used for railway seats reservation",
+  "main": "app.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -r dotenv/config app.js",
+    "prod": "NODE_ENV=production node -r dotenv/config app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ishank Agarwal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "nodemon": "^2.0.4"
+  }
+}

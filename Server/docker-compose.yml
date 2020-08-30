@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  #Main Application
+  reservation_app:
+    image: node:12.14-alpine
+    working_dir: /usr/src/app
+    container_name: reservation_app
+    depends_on:
+      - reservation_mongo
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "$APP_PORT:$APP_PORT"
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - railway_app_network
+    command: ./wait-for.sh reservation_mongo:$MONGO_PORT -- npm run dev
+
+  #MongoDB Container Example
+  reservation_mongo:
+    image: mongo:4.2-bionic
+    container_name: reservation_mongo
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+    ports:
+      - "5101:$MONGO_PORT"
+    volumes:
+      - railway_mongodb_data:/data/db
+    networks:
+      - railway_app_network
+
+networks:
+  railway_app_network:
+    external: true
+
+volumes:
+  railway_mongodb_data:
