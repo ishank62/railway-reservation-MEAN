@@ -1,9 +1,9 @@
 # RAILWAY SEAT RESERVATION APP:
 
 ## **Key Features**
-1. Concurrent reserving of seats by different users is being handled by appropriate messages.
-2. In cases where user wants to book many seats, and if they are not available in a single row, then, maximum number of seats are assigned in a single row from the entry point of the coach and rest of the seats are assigned nearby this row.
-3. Option to reset all reservations.
+1. Concurrent reservation of same seats by different users is being handled by appropriate messages.
+2. In cases where user wants to book many seats and if that many empty seats are not available in a single row then, the maximum number of seats are assigned in a single row from the entry point of the coach and rest of the seats are assigned nearby this row.
+3. Feature to reset all reservations for all users. This feature is implemented for the case when user wants to test the application afresh.
 
 ## Click on below link to see hosted app:-
 <a href="http://13.234.225.140" target="_blank">DEMO OF THE PROJECT</a> (http://13.234.225.140)
