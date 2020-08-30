@@ -41,7 +41,7 @@ Clone this repo.
 
 ### Legend
 
-1. Green coloured boxes - <strong>CHOSEN SEATS</strong>
-2. Grey coloured boxes - <strong>FILLED SEATS</strong>
+1. Green coloured boxes - <strong>Seats chosen by user to be booked</strong>
+2. Grey coloured boxes - <strong>Seats that are Filled (not empty)</strong>
 
 ![Screenshot 1](https://github.com/ishank62/railway-reservation-MEAN/blob/master/images/reservation.png)
