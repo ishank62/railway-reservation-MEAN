@@ -34,3 +34,9 @@ Clone this repo.
     docker-compose up
     ```
 
+## Preview of the App where:-
+
+1. Green coloured boxes means - CHOSEN SEATS
+2. Grey coloured boxes means - FILLED SEATS
+
+![Screenshot 1](https://github.com/ishank62/railway-reservation-MEAN/blob/master/images/reservation.png)
