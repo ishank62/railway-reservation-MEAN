@@ -1,0 +1,9 @@
+version: "3.0"
+services:
+  railway-app:
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8000:80

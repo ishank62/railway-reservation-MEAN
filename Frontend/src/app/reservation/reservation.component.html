@@ -1,0 +1,66 @@
+<div class="main">
+  <h1>Welcome to Railway Reservation Page</h1>
+  <ng-container>
+    <h4>Please enter the no. of seats you want to book in the train below.</h4>
+    <input (keyup)="handleChange($event)" />
+    <button (click)="submitNoOfSeats()">Submit</button>
+    <p class="red" *ngIf="!validation">
+      Only Numbers less than or equal to 7 allowed.
+    </p>
+  </ng-container>
+
+  <h2>SEATS AVAILABILITY</h2>
+  <p>(Two columns are shown only to fit seats on page without scrolling)</p>
+  <div class="content">
+    <div class="seats-container">
+      <ng-container *ngFor="let seat of seats; let i = index">
+        <div
+          *ngIf="i < 63"
+          class="seat"
+          [ngClass]="{
+            grey: filledSeats.indexOf(seat) > -1,
+            green: selectedSeats.indexOf(seat) > -1
+          }"
+        >
+          <p>
+            <strong>{{ seat }}</strong>
+          </p>
+        </div>
+      </ng-container>
+    </div>
+    <div class="seats-container">
+      <ng-container *ngFor="let seat of seats; let i = index">
+        <div
+          *ngIf="i > 63 && i < 80"
+          class="seat"
+          [ngClass]="{
+            grey: filledSeats.indexOf(seat) > -1,
+            green: selectedSeats.indexOf(seat) > -1
+          }"
+        >
+          <p>
+            <strong>{{ seat }}</strong>
+          </p>
+        </div>
+      </ng-container>
+    </div>
+    <div class="success">
+      <button class="book" (click)="bookSeats()">
+        <h4><strong>Book Selected Seats</strong></h4>
+      </button>
+      <h1 *ngIf="success">
+        Congrats! Seat no(s): {{ selectedSeats.join(", ") }} booked
+        Successfully!
+      </h1>
+      <br /><br /><br /><br /><br />
+      <button class="delete" (click)="deleteAllSeats()">
+        <h4><strong>Cancel All reservations for this train</strong></h4>
+      </button>
+      <p class="red">
+        <strong
+          >(Caution: Clicking this button will erase all reservations!)</strong
+        >
+      </p>
+    </div>
+  </div>
+</div>

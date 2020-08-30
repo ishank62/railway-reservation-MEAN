@@ -1,0 +1,62 @@
+.main {
+  text-align: center;
+}
+
+.seats-container {
+  width: 365px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 100px;
+  margin-right: 50px;
+  height: min-content;
+  margin-left: 50px;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border: 1px solid darkgrey;
+  background: white;
+  font-size: 13px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.grey {
+  background-color: lightgray;
+}
+
+.green {
+  background-color: lightgreen;
+}
+
+.red {
+  color: red;
+}
+
+.book,
+.delete {
+  background: lightgreen;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+.delete {
+  background: red;
+  color: white;
+  margin-top: 100px;
+}
+
+.success {
+  width: 33%;
+}
