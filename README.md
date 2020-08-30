@@ -2,7 +2,7 @@
 
 ## **Key Features**
 1. Concurrent reserving of seats by different users is being handled by appropriate messages.
-2. In cases where we demand many seats in one row then if they are not available, maximum no. of seats are assigned in a single row from the entry point of the coach and rest of the seats are assigned nearby this row.
+2. In cases where user wants to book many seats, and if they are not available in a single row, then, maximum number of seats are assigned in a single row from the entry point of the coach and rest of the seats are assigned nearby this row.
 3. Option to reset all reservations.
 
 ## Click on below link to see hosted app:-
@@ -16,7 +16,7 @@
 3. <strong>MongoDb</strong> - Database
 4. <strong>Docker</strong> - Containerization used in Backend
 5. <strong>Nginx</strong> - Web Server for Hosting Frontend
-6. <strong>AWS EC2</strong>(Amazon Web Services Elastic Container Service) - Cloud Service to Host the app
+6. <strong>AWS EC2</strong>(Amazon Web Services Elastic Compute Cloud) - Cloud Service to Host the app
 
 
 ## Project Setup:
@@ -37,9 +37,11 @@ Clone this repo.
     docker-compose up
     ```
 
-## Preview of the App where:-
+## Preview of the App:-
 
-1. Green coloured boxes means - <strong>CHOSEN SEATS</strong>
-2. Grey coloured boxes means - <strong>FILLED SEATS</strong>
+### Legend
+
+1. Green coloured boxes - <strong>CHOSEN SEATS</strong>
+2. Grey coloured boxes - <strong>FILLED SEATS</strong>
 
 ![Screenshot 1](https://github.com/ishank62/railway-reservation-MEAN/blob/master/images/reservation.png)
