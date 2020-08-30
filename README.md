@@ -2,6 +2,7 @@
 
 ## **Key Features**
 1. Concurrent reserving of seats by different users is being handled. by appropriate messages.
+2. In cases where we demand many seats in one row then if they are not available, maximum no. of seats are assigned in a single row from the entry point of the coach and rest of the seats are assigned nearby this row.
 2. Option to reset all reservations.
 
 ## Click on below link to see hosted app:-
