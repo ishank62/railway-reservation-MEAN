@@ -21,10 +21,10 @@ http://13.234.225.140
 Clone this repo.
 
 1. To run Frontend locally:-
-    cd Frontend
-    ng serve
+    ```cd Frontend
+    ng serve```
   
 2. To run backend locally:-
-    cd Server
-    docker-compose up
+    ```cd Server
+    docker-compose up```
 
