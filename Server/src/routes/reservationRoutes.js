@@ -50,7 +50,7 @@ reservationRouter
                     res.setHeader('Content-Type', 'application/json');
                     res.json({
                         error: true,
-                        message: "Seat(s) already booked"
+                        message: "Chosen Seat(s) have already been booked by another user! Please Refresh the page to see booked seats"
                     });
                     return;
                 }
@@ -64,7 +64,11 @@ reservationRouter
                     .then(reservation => {
                             res.statusCode = 200;
                             res.setHeader('Content-Type', 'application/json');
-                            res.json(reservation);
+                            res.json({
+                                error: false,
+                                response: reservation,
+                                message: 'success'
+                            });
                         },
                         err => next(err))
                     .catch(err => next(err));

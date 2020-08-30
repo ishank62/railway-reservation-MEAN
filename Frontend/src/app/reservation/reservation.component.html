@@ -14,14 +14,10 @@
   <div class="content">
     <div class="seats-container">
       <ng-container *ngFor="let seat of seats; let i = index">
-        <div
-          *ngIf="i < 63"
-          class="seat"
-          [ngClass]="{
+        <div *ngIf="i < 63" class="seat" [ngClass]="{
             grey: filledSeats.indexOf(seat) > -1,
             green: selectedSeats.indexOf(seat) > -1
-          }"
-        >
+          }">
           <p>
             <strong>{{ seat }}</strong>
           </p>
@@ -30,14 +26,10 @@
     </div>
     <div class="seats-container">
       <ng-container *ngFor="let seat of seats; let i = index">
-        <div
-          *ngIf="i > 63 && i < 80"
-          class="seat"
-          [ngClass]="{
+        <div *ngIf="i > 63 && i < 80" class="seat" [ngClass]="{
             grey: filledSeats.indexOf(seat) > -1,
             green: selectedSeats.indexOf(seat) > -1
-          }"
-        >
+          }">
           <p>
             <strong>{{ seat }}</strong>
           </p>
@@ -52,14 +44,13 @@
         Congrats! Seat no(s): {{ selectedSeats.join(", ") }} booked
         Successfully!
       </h1>
+      <h2 class="red" *ngIf="errMess">{{errMess}}</h2>
       <br /><br /><br /><br /><br />
       <button class="delete" (click)="deleteAllSeats()">
         <h4><strong>Cancel All reservations for this train</strong></h4>
       </button>
       <p class="red">
-        <strong
-          >(Caution: Clicking this button will erase all reservations!)</strong
-        >
+        <strong>(Caution: Clicking this button will erase all reservations!)</strong>
       </p>
     </div>
   </div>

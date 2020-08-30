@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ReservationService } from './reservation.service';
-import { ObjectID } from 'bson';
+import { Component, OnInit } from "@angular/core";
+import { ReservationService } from "./reservation.service";
+import { ObjectID } from "bson";
 
 @Component({
-  selector: 'app-reservation',
-  templateUrl: './reservation.component.html',
-  styleUrls: ['./reservation.component.scss'],
+  selector: "app-reservation",
+  templateUrl: "./reservation.component.html",
+  styleUrls: ["./reservation.component.scss"],
 })
 export class ReservationComponent implements OnInit {
   passengerId = new ObjectID().toString();
@@ -15,12 +15,13 @@ export class ReservationComponent implements OnInit {
   selectedSeats = [];
   success = false;
   validation = true;
+  errMess;
 
   constructor(private rs: ReservationService) {}
 
   ngOnInit(): void {
     this.rs.getSeats().subscribe((res) => {
-      this.filledSeats = res['response']['filledSeats'];
+      this.filledSeats = res["response"]["filledSeats"];
     });
     for (let i = 1; i <= 80; i++) {
       this.seats.push(i);
@@ -90,23 +91,6 @@ export class ReservationComponent implements OnInit {
       prevRow--;
       nextRow++;
     }
-    // let sortedSpacesInRow = spacesInRow.slice();
-    // sortedSpacesInRow.sort(function (a, b) {
-    //   return b - a;
-    // });
-
-    // let counter = 0;
-    // for (let j = 0; j < sortedSpacesInRow.length; j++) {
-    //   let index = spacesInRow.indexOf(sortedSpacesInRow[j]);
-    //   for (let i = index * 7; i < index * 7 + 6; i++) {
-    //     if (this.filledSeats.indexOf(this.seats[i]) < 0) {
-    //       this.selectedSeats.push(this.seats[i]);
-    //       counter++;
-    //     }
-    //     if (counter === this.numberOfSeats) break;
-    //   }
-    //   if (counter === this.numberOfSeats) break;
-    // }
   }
 
   getSpacesInRows() {
@@ -130,23 +114,35 @@ export class ReservationComponent implements OnInit {
 
   bookSeats() {
     if (!this.selectedSeats.length) {
-      alert('Please select some seats first!');
+      alert("Please enter the number of seats and click on submit first!");
       return;
     }
     let reqBody = {
       passengerId: this.passengerId,
       seatNumbers: this.selectedSeats,
     };
-    this.rs.reserveSeats(reqBody).subscribe((res) => {
-      this.success = true;
-    });
+    this.rs.reserveSeats(
+      reqBody,
+      (res) => {
+        this.rs.getSeats().subscribe((res) => {
+          this.filledSeats = res["response"]["filledSeats"];
+          this.errMess = null;
+        });
+        this.success = true;
+      },
+      (errRes) => {
+        this.errMess = errRes;
+        console.error(errRes);
+      }
+    );
   }
 
   deleteAllSeats() {
     this.rs.deleteAllReservations().subscribe((res) => {
       this.rs.getSeats().subscribe((res) => {
-        this.filledSeats = res['response']['filledSeats'];
+        this.filledSeats = res["response"]["filledSeats"];
         this.selectedSeats = [];
+        this.errMess = null;
       });
     });
   }
