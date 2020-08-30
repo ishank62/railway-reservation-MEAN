@@ -28,7 +28,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
       - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
     ports:
-      - "5101:$MONGO_PORT"
+      - "9000:$MONGO_PORT"
     volumes:
       - railway_mongodb_data:/data/db
     networks:
