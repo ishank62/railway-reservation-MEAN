@@ -6,7 +6,7 @@
 3. Option to reset all reservations.
 
 ## Click on below link to see hosted app:-
-<a href="http://13.234.225.140" target="_blank">DEMO OF THE PROJECT</a>
+<a href="http://13.234.225.140" target="_blank">DEMO OF THE PROJECT</a> (http://13.234.225.140)
 
 
 ## Techstack Used:
