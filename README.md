@@ -1,7 +1,7 @@
 # RAILWAY SEAT RESERVATION APP:
 
 ## **Key Features**
-1. Concurrent reserving of seats by different users is being handled. by appropriate messages.
+1. Concurrent reserving of seats by different users is being handled by appropriate messages.
 2. In cases where we demand many seats in one row then if they are not available, maximum no. of seats are assigned in a single row from the entry point of the coach and rest of the seats are assigned nearby this row.
 3. Option to reset all reservations.
 
@@ -10,16 +10,16 @@
 
 
 ## Techstack Used:
-1. Angular - Frontend Framework
-2. Nodejs - Server-side environment
-3. Express - Server-side Framework
-3. Mogodb - Database
-4. Docker - Containerization used in Backend
-5. Nginx - Web Server for Hosting Frontend
-6. AWS EC2(Amazon Web Services Elalstic Container Service) - Cloud Service to Host the app
+1. <strong>Angular</strong> - Frontend Framework
+2. <strong>Nodejs</strong> - Server-side environment
+3. <strong>Express</strong> - Server-side Framework
+3. <strong>MongoDb</strong> - Database
+4. <strong>Docker</strong> - Containerization used in Backend
+5. <strong>Nginx</strong> - Web Server for Hosting Frontend
+6. <strong>AWS EC2</strong>(Amazon Web Services Elastic Container Service) - Cloud Service to Host the app
 
 
-## Projejct Setup:
+## Project Setup:
 
 Clone this repo.
 
@@ -39,7 +39,7 @@ Clone this repo.
 
 ## Preview of the App where:-
 
-1. Green coloured boxes means - CHOSEN SEATS
-2. Grey coloured boxes means - FILLED SEATS
+1. Green coloured boxes means - <strong>CHOSEN SEATS</strong>
+2. Grey coloured boxes means - <strong>FILLED SEATS</strong>
 
 ![Screenshot 1](https://github.com/ishank62/railway-reservation-MEAN/blob/master/images/reservation.png)
