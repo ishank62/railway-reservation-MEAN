@@ -6,7 +6,8 @@
 3. Option to reset all reservations.
 
 ## Click on below link to see hosted app:-
-http://13.234.225.140
+<a href="http://13.234.225.140" target="_blank">DEMO OF THE PROJECT</a>
+
 
 ## Techstack Used:
 1. Angular - Frontend Framework
