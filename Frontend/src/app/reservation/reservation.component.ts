@@ -43,19 +43,30 @@ export class ReservationComponent implements OnInit {
       this.validation = false;
       return;
     }
+    this.success = false;
     this.selectedSeats = [];
     let spacesInRow = this.getSpacesInRows();
 
     let max = 0;
+    let getLeast = 0;
+    getLeast = 7;
     for (let i = 0; i < spacesInRow.length; i++) {
-      if (max < spacesInRow[i]) max = spacesInRow[i];
+      if (max < spacesInRow[i]) {
+        max = spacesInRow[i];
+        if (spacesInRow[i] < getLeast && spacesInRow[i] >= this.numberOfSeats) {
+          getLeast = spacesInRow[i];
+        }
+      }
       if (spacesInRow[i] >= this.numberOfSeats) {
         max = spacesInRow[i];
-        break;
+
+        if (spacesInRow[i] < getLeast && spacesInRow[i] >= this.numberOfSeats) {
+          getLeast = spacesInRow[i];
+        }
       }
     }
-
-    let index = spacesInRow.indexOf(max);
+    console.log("asdaaaaa", getLeast);
+    let index = spacesInRow.indexOf(getLeast);
     let counter = 0;
     for (let i = index * 7; i < index * 7 + 7; i++) {
       if (this.filledSeats.indexOf(this.seats[i]) < 0) {
