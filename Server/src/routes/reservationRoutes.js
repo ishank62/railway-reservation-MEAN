@@ -31,18 +31,6 @@ reservationRouter
             )
             .catch(err => next(err));
     })
-    .get('/assignment',  (req, res, next) =>  {
-        console.log("kkkkkkkasdasdada");
-        axios.get('https://reqres.in/api/users?page=2')
-            .then(data =>  {
-               console.log("insideeeeasdasdadada", data.data);
-
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'application/json');
-                res.json({ error:  false, response:data.data});
-            })
-            .catch(err =>  console.error(err));
-    })
     .post('/reserve-seats', (req, res, next) => {
         let seatNumberErr = req.body.seatNumbers.filter(seatNumber => seatNumber > 80);
         if (seatNumberErr.length) {
